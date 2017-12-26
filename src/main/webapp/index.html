@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://hosted-sip.civic.com/css/civic-modal.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://hosted-sip.civic.com/js/civic.sip.min.js"></script>
+</head>
+<body>
+
+    <button class="signup">signup</button>
+
+    <div>Output:</div>
+    <div class="output"></div>
+
+    <script type="text/javascript">
+        var civicSip = new civic.sip({ appId: 'HJAjXfL-f' });
+
+        $('button.signup').click(function() {
+            civicSip.signup({style: 'popup', scopeRequest: civicSip.ScopeRequests.BASIC_SIGNUP})
+        });
+
+        civicSip.on('auth-code-received', function (event) {
+            $.post('/token', event.response, function(data) {
+                console.log(data);
+                $(".output").html(JSON.stringify(data));
+            });
+        });
+    </script>
+
+</body>
+</html>
