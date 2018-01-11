@@ -13,7 +13,7 @@ Add the following configuration to your `build.gradle` file in `repositories` se
 
 Add dependency to you `build.gradle` file:
 ```
-    compile("com.github.MosquitoKill3r:civic-api:-SNAPSHOT")
+    compile("com.github.MosquitoKill3r:civic-api:0.0.3")
 ```
 
 That's it!
