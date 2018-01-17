@@ -18,7 +18,7 @@ buildscript {
 
 jar {
     baseName = 'gs-spring-boot'
-    version =  '0.1.0'
+    version = '0.1.0'
 }
 
 repositories {
@@ -37,5 +37,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
 
-    compile("com.github.MosquitoKill3r:civic-api:0.0.3")
+    compile('com.github.civic-community:civic-sip-api-java:0.0.3')
 }
